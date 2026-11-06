@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AsPlay</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+.center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 40px);
+}
+
+.download-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 25px;
+    background: white;
+    color: #066bb3;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1696e8;
+}
+
+/* Верхнее меню */
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+    background: white;
+}
+
+.menu button {
+    background: none;
+    border: none;
+    color: hotpink;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Основная часть */
+.layout {
+    position: relative;
+    display: block;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 40px);
+}
+
+.sidebar {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 260px;
+}
+
+/* Центральный блок */
+.center {
+    flex: 1;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background: #066bb3;
+    padding: 50px;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+}
+
+.box h1 {
+    font-size: 60px;
+}
+
+.box p {
+    font-size: 30px;
+}
+
+/* Боковая панель */
+  .sidebar {
+      width: 300px;
+      flex-shrink: 0;
+  }
+
+/* Блоки панели */
+.panel {
+    background: #147fb4;
+    color: white;
+    padding: 27px;
+    margin-bottom: 25px;
+    border-top: 4px solid #302078;
+}
+
+.panel h2 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* Поиск */
+.search {
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 20px;
+    border: 2px solid #ccc;
+    outline: none;
+}
+
+/* Список публикаций */
+.panel ul {
+    padding-left: 23px;
+}
+
+.panel li {
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+
+.panel a {
+    color: white;
+}
+
+/* Архивы */
+.panel select {
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+}
+
+/* Мобильная версия */
+@media (max-width: 750px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .center {
+        width: 100%;
+        min-height: 400px;
+    }
+
+    .box {
+        padding: 30px;
+    }
+
+    .box h1 {
+        font-size: 40px;
+    }
+
+    .box p {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Верхнее меню -->
+<div class="menu">
+
+<button onclick="window.open('https://www.youtube.com/@Asplay-1')">
+Мой YouTube Канал
+</button>
+
+<button onclick="window.open('https://www.tiktok.com/@asplay_0')">
+Мой Тикток аккаунт
+</button>
+
+<button onclick="window.open('https://www.snapchat.com/@as0_editer')">
+Мой Снап аккаунт
+</button>
+
+<button>Кнопка 4</button>
+<button>Кнопка 5</button>
+<button>Кнопка 6</button>
+
+</div>
+
+<div class="layout">
+
+<!-- Центральная часть -->
+<div class="center">
+    <div class="box">
+        <h1>Привет</h1>
+        <p>Это мой самый первый сайт</p>
+
+        <a class="download-button" href="AsPlay.txt" download>
+            Скачать AsPlay 1.0
+        </a>
+    </div>
+</div>
+<!-- Боковая панель -->
+<aside class="sidebar">
+    <!-- Последние публикации -->
+    <div class="panel">
+        <h2>удобынй </h2>
+    </div>
+
+
+    <!-- Категории -->
+    <div class="panel">
+        <h2>Разделы</h2>
+
+        <ul>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Игры</a></li>
+            <li><a href="#">Видео</a></li>
+            <li><a href="#">Разное</a></li>
+        </ul>
+    </div>
+
+</aside>
+
+</div>
+
+</body>
+</html>

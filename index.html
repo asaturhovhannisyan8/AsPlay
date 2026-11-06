@@ -34,26 +34,49 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #1696e8;
-}
 
-/* Верхнее меню */
+    background-image: url("обои пк.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+} 
+
+
+/* Верхнее меню Liquid Glass */
 .menu {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
     padding: 20px;
-    background: white;
+
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    margin: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .menu button {
-    background: none;
-    border: none;
-    color: hotpink;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
     font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 15px;
     cursor: pointer;
+    transition: 0.3s;
 }
+
+.menu button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+  
 
 /* Основная часть */
 .layout {
@@ -180,7 +203,7 @@ body {
         font-size: 22px;
     }
 }
-</style>
+</style> 
 </head>
 
 <body>
@@ -196,13 +219,11 @@ body {
 Мой Тикток аккаунт
 </button>
 
-<button onclick="window.open('https://www.snapchat.com/@as0_editer')">
-Мой Снап аккаунт
+<button onclick="window.open('https://www.twitch.tv/asplay13')">
+Мой Твич аккаунт
 </button>
 
-<button>Кнопка 4</button>
-<button>Кнопка 5</button>
-<button>Кнопка 6</button>
+
 
 </div>
 
@@ -220,13 +241,7 @@ body {
     </div>
 </div>
 <!-- Боковая панель -->
-<aside class="sidebar">
-    <!-- Последние публикации -->
-    <div class="panel">
-        <h2>удобынй </h2>
-    </div>
-
-
+<aside class="sidebar"> 
     <!-- Категории -->
     <div class="panel">
         <h2>Разделы</h2>
@@ -235,7 +250,7 @@ body {
             <li><a href="#">Новости</a></li>
             <li><a href="#">Игры</a></li>
             <li><a href="#">Видео</a></li>
-            <li><a href="#">Разное</a></li>
+            <li><a href="minecraft.html">Minecraft Север</a></li>
         </ul>
     </div>
 
@@ -244,4 +259,5 @@ body {
 </div>
 
 </body>
+</div>
 </html>

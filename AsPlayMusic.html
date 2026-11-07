@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AsPlay Music</title>
+    <title>music
+    
+    </title>
 
     <style>
+        .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header a {
+    margin: 0;
+}
         body {
             background: #101020;
             color: white;
             font-family: Arial;
             text-align: center;
-            padding: 30px;
+            padding: 15px;
         }
 
         h1 {
@@ -26,32 +43,49 @@
             max-width: 400px;
         }
 
-        a {
-display: inline-block;
-background: #1696e8;
-color: white;
-text-decoration: none;
-padding: 12px 22px;
-border-radius: 10px;
-margin-top: 20px;
-font-size: 15px;
-transition: 0.3s;
+       a {
+    display: inline-block;
+    background: linear-gradient(135deg, #1696e8, #0755b8);
+    color: white;
+    text-decoration: none;
+    padding: 13px 28px;
+    border-radius: 12px;
+    margin-top: 5   px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(22, 150, 232, 0.3);
+    transition: 0.3s;
 }
 
 a:hover {
-background: #0874bd;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(22, 150, 232, 0.5);
+}
     </style>
 </head>
 
 <body>
 
+<div class="header">
     <h1>🎵 AsPlay Music</h1>
-    <p>Мои любимые треки</p>
+    <a href="index.html">← На главную</a>
+</div>
 
+<p>Мои любимые треки</p>
     <div class="song">
-        <h3>Nuts</h3>
-        <p>Lil Peep</p>
-    </div>
+    <h3>Nuts</h3>
+    <p>Lil Peep</p>
+
+    <audio controls>
+        <source src="Lil Peep - Nuts (feat. rainy bear).mp3" type="audio/mpeg">
+    </audio>
+
+    <br>
+
+    <a href="Lil Peep - Nuts (feat. rainy bear).mp3" download>
+        ⬇ Скачать MP3
+    </a>
+</div>
 
     <div class="song">
         <h3>Snowman</h3>
@@ -67,8 +101,6 @@ background: #0874bd;
         <h3>Death Bed</h3>
         <p>Powfu</p>
     </div>
-
-    <a href="index.html">← На главную</a>
 
 </body>
 </html>

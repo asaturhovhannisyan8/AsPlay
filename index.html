@@ -11,7 +11,85 @@
     box-sizing: border-box;
 }
 
+/* Заставка загрузки */
+#loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #101020;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+#loader h1 {
+    font-size: 65px;
+    color: #1696e8;
+    text-shadow: 0 0 25px #1696e8;
+    margin-bottom: 30px;
+}
+
+.loader-bar {
+    width: 220px;
+    height: 7px;
+    background: #33334a;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.loader-progress {
+    width: 0%;
+    height: 100%;
+    background: #1696e8;
+    border-radius: 20px;
+    animation: loading 1.5s ease forwards;
+}
+
+#loader p {
+    color: #aaa;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+#loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes loading {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+/* Анимация кнопок */
+button,
+nav a {
+    transition: all 0.25s ease;
+    cursor: pointer;
+    animation: buttonGlow 2s infinite;
+}
+
+button:hover,
+nav a:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+}
+
+button:active,
+nav a:active {
+    transform: scale(0.94);
+}
+
+@keyframes buttonGlow {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.25); }
+}
+
 body {
+    padding-top: 90px;
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url("обои пк.jpg");
@@ -23,34 +101,36 @@ body {
 
 /* Верхнее меню */
 .menu {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 30px);
+    z-index: 1000;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(255,255,255,0.18);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255,255,255,0.35);
     border-radius: 20px;
     margin: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
 }
 
 .menu button {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
     color: white;
     font-size: 18px;
     padding: 12px 20px;
     border-radius: 15px;
-    cursor: pointer;
-    transition: 0.3s;
 }
 
 .menu button:hover {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255,255,255,0.4);
     transform: translateY(-2px);
 }
 
@@ -58,7 +138,7 @@ body {
 .contact-dropdown {
     position: absolute;
     right: 25px;
-    top: 60%;
+    top: 50%;
     transform: translateY(-50%);
 }
 
@@ -76,7 +156,7 @@ body {
     min-width: 230px;
     padding: 8px;
     margin-top: 10px;
-    background: rgba(30, 30, 30, 0.9);
+    background: rgba(30,30,30,0.9);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255,255,255,0.3);
     border-radius: 14px;
@@ -116,11 +196,16 @@ body {
 }
 
 .box {
-    background: #066bb3;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.3);
     padding: 50px;
     border-radius: 25px;
     text-align: center;
     color: white;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    text-shadow: 2px 2px 5px black;
 }
 
 .box h1 {
@@ -131,6 +216,7 @@ body {
     font-size: 30px;
 }
 
+/* Кнопка скачивания */
 .download-button {
     display: inline-block;
     margin-top: 25px;
@@ -141,6 +227,20 @@ body {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
+    text-shadow: none;
+    box-shadow: none;
+    transition: 0.2s;
+}
+
+.download-button:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.download-button:active {
+    transform: translateY(6px);
+    box-shadow: 0 2px 0 #07528a,
+                0 4px 8px rgba(0,0,0,0.5);
 }
 
 /* Боковая панель */
@@ -152,13 +252,15 @@ body {
 }
 
 .panel {
-    background: #147fb4;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     color: white;
     padding: 27px;
     margin-bottom: 25px;
-    border: none;
+    border: 1px solid rgba(255,255,255,0.3);
     border-radius: 18px;
-    box-shadow: none;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
 }
 
 .panel h2 {
@@ -180,102 +282,20 @@ body {
     color: white;
 }
 
-/* Мобильная версия */
 
-@media (max-width: 750px) {
-
-    .menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        padding: 20px;
-    }
-
-    .menu button {
-        width: 100%;
-        max-width: 320px;
-        font-size: 17px;
-    }
-
-    .contact-dropdown {
-        position: relative;
-        top: auto;
-        right: auto;
-        transform: none;
-        margin: 5px 0;
-    }
-
-    .layout {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 15px;
-        min-height: auto;
-    }
-
-    .center {
-        order: 1;
-        width: 100%;
-        min-height: 400px;
-    }
-
-    .box {
-        width: 100%;
-        padding: 30px 15px;
-    }
-
-    .box h1 {
-        font-size: 40px;
-    }
-
-    .box p {
-        font-size: 22px;
-    }
-
-    .sidebar {
-        position: static;
-        order: 2;
-        width: 100%;
-    }
-
-    .panel {
-        width: 100%;
-        border-radius: 18px;
-    }
-} 
-@media (max-width: 750px) {
-    body {
-        background-size: auto 100%;
-        background-position: center top;
-        background-attachment: scroll;
-        background-repeat: repeat-y;
-    }
-}
-/* Отдельный фон для телефона */
-@media (max-width: 750px) {
-    body {
-        background-image: url("mobile.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: scroll;
-        background-repeat: no-repeat;
-    }
-}
-/* Фон для телефона */
-@media (max-width: 750px) {
-    body {
-        background-image: url("Телеграмм_ PixWalls_w.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: scroll;
-        background-repeat: no-repeat;
-    }
-} </style>
-
+</style>
 </head>
 
 <body>
+
+<!-- Заставка загрузки -->
+<div id="loader">
+    <h1>AsPlay</h1>
+    <div class="loader-bar">
+        <div class="loader-progress"></div>
+    </div>
+    <p>Загрузка...</p>
+</div>
 
 <!-- Верхнее меню -->
 <div class="menu">
@@ -313,7 +333,7 @@ body {
     <div class="center">
         <div class="box">
             <h1>Привет</h1>
-            <p>Вот мой Сайт который я создал  </p>
+            <p>ты попал на мой сайт тут есть всё</p>
 
             <a class="download-button" href="AsPlay.txt" download>
                 Скачать test
@@ -328,6 +348,7 @@ body {
 
             <ul>
                 <li><a href="https://t.me/channelAsPlay_real" target="_blank">Telegram канал</a></li>
+                <li><a href="https://t.me/MrZuroken" target="_blank">Telegram-канал с модами</a></li>
                 <li><a href="minecraft.html">Minecraft Сервер</a></li>
                 <li><a href="music.html">Мои любимые треки</a></li>
             </ul>
@@ -340,6 +361,13 @@ body {
 function toggleContacts() {
     document.getElementById("contactMenu").classList.toggle("show");
 }
+
+/* Запуск заставки */
+window.addEventListener("load", function() {
+    setTimeout(function() {
+        document.getElementById("loader").classList.add("hide");
+    }, 1600);
+});
 </script>
 
 </body>
